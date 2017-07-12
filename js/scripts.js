@@ -12,16 +12,20 @@
 var pigLatinTranslator = function(userInput) {
   var firstChar = userInput.charAt(0);
   var secChar = userInput.charAt(1);
+  var thirdChar = userInput.charAt(2);
     for (i = 0; i < vowels.length; i++){
     if (firstChar === vowels[i]) {
       return userInput + "way";
     } else {
   for (i = 0; i < consonants.length; i++) {
-  if (firstChar === consonants[i] & secChar === vowels) {
+  if (firstChar === consonants[i] && secChar === vowels) {
     return userInput.substring(1) + firstChar + "ay";
-  } else if (secChar === consonants[i]) {
+  } else if (secChar === consonants[i] && thirdChar === vowels) {
     return userInput.substring(2) + firstChar + secChar + "ay";
+  } else if (thirdChar === consonants[i]) {
+    return userInput.substring(3) + firstChar + secChar + thirdChar + "ay";
   }
+
   }
   }
 }
