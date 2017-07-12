@@ -11,15 +11,20 @@
 
 var pigLatinTranslator = function(userInput) {
   var firstChar = userInput.charAt(0);
+  var secChar = userInput.charAt(1);
     for (i = 0; i < vowels.length; i++){
     if (firstChar === vowels[i]) {
       return userInput + "way";
-    }
-  }
-  for (i = 0; i < consonants.length; i++)
-  if (firstChar == consonants[i]) {
+    } else {
+  for (i = 0; i < consonants.length; i++) {
+  if (firstChar === consonants[i] & secChar === vowels) {
     return userInput.substring(1) + firstChar + "ay";
+  } else if (secChar === consonants[i]) {
+    return userInput.substring(2) + firstChar + secChar + "ay";
   }
+  }
+  }
+}
 }
 
 // UI logic below -->
@@ -30,5 +35,4 @@ $(function(){
     var userInput = $("#plain-input").val();
     $("#output").text(pigLatinTranslator(userInput));
   });
-
 });
