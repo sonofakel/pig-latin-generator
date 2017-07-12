@@ -18,7 +18,7 @@ var pigLatinTranslator = function(userInput) {
   }
   for (i = 0; i < consonants.length; i++)
   if (firstChar == consonants[i]) {
-
+    return userInput.substring(1) + firstChar + "ay";
   }
 }
 
